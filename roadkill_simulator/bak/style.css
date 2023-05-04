@@ -1,0 +1,30 @@
+.body {
+    overflow-y: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.car {
+    position: absolute;
+    left: 200px;
+    bottom: 100px;
+    width: 50px;
+    height: 100px;
+    background-color: cadetblue;
+}
+
+.game {
+    background-color: #5A882D;
+}
+
+.gameArea {
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    left: 42%;
+
+}
