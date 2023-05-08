@@ -31,6 +31,17 @@ const questions = [
   // },
 ];
 
+const showInfos = [
+  {
+    image: './images/info1.png',
+    title: '怎麼回報路殺',
+  },
+  {
+    image: './images/info2.png',
+    title: '為什麼要回報路殺'
+  },
+]
+
 let currentQuestion = 0;
 let correctAnswers = 0;
 
@@ -96,10 +107,14 @@ function checkAnswer(answer) {
 // 顯示最終得分
 function showScore() {
   const container = document.querySelector('.container');
+  const info_id = correctAnswers % showInfos.length;
+  // console.log(info_id);
   container.innerHTML = `
     <h1>測試結果</h1>
-    <p>你的鑑定正確率為 ${(correctAnswers / questions.length)*100}%！</p>
+    <p>你的鑑定正確率為 ${(correctAnswers / questions.length) * 100}%！</p>
     <h4>關於路殺，你必須要知道的是：</h4>
+    <img src = ${showInfos[info_id].image} class="pic_identify"></img>
+    <h3></h4>
     <button type="button" onclick="location.reload()" class="accept">重新開始</button>
   `;
 }
