@@ -6,24 +6,31 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="the_titles">
+      <h1></h1>  
+    </div>
+    <div id="start" class="start">
+      <img class="pic_identify" src="./images/identify.png"></img>
+      <h3></h3>
+      <button onclick="startGame()" class="accept">開始鑑定</button>
+    </div>
+
+    <div id='quiz'class="container hide">
       <h1>這是什麼動物？</h1>  
       <div class="pic">
         <img id="images">
       </div>
 
-
       <dialog id="infoModal_ml" class="card cookie-card">
         <div class="card-content">
           <h2 id = "title" class="title"></h2>
           <h3 id = "answerIs" class="description"></h3>
+          <h3 id = "ansInfo" class="description"></h3>
           <div class="actions">
             <button id="close_ml" type="button" class="accept">下一題</button>
           </div>
         </div>
       </dialog>
-
-
 
       <div id="question"></div>
       <div id="answer"></div>
