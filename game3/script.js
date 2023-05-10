@@ -9,21 +9,21 @@ const questions = [
     answer: '穿山甲',
     info: '你知道穿山甲被路殺的原因通常是因為...',
   },
-  // {
-  //   image: './images/梭德氏樹蛙.jpeg',
-  //   answer: '梭德氏樹蛙',
-  //   info: '你知道梭德氏樹蛙被路殺的原因通常是因為...',
-  // },
-  // {
-  //   image: './images/奧氏後相手蟹.jpeg',
-  //   answer: '奧氏後相手蟹',
-  //   info: '你知道奧氏後相手蟹被路殺的原因通常是因為...',
-  // },
-  // {
-  //   image: './images/領角鴞.jpeg',
-  //   answer: '領角鴞',
-  //   info: '你知道領角鴞被路殺的原因通常是因為...',
-  // },
+  {
+    image: './images/梭德氏樹蛙.jpeg',
+    answer: '梭德氏樹蛙',
+    info: '你知道梭德氏樹蛙被路殺的原因通常是因為...',
+  },
+  {
+    image: './images/奧氏後相手蟹.jpeg',
+    answer: '奧氏後相手蟹',
+    info: '你知道奧氏後相手蟹被路殺的原因通常是因為...',
+  },
+  {
+    image: './images/領角鴞.jpeg',
+    answer: '領角鴞',
+    info: '你知道領角鴞被路殺的原因通常是因為...',
+  },
   // {
   //   image: './images/龜殼花.jpeg',
   //   answer: '龜殼花',
@@ -138,7 +138,7 @@ answerElement.appendChild(formElement);
 const inputElement = document.createElement('input');
 inputElement.setAttribute('type', 'text');
 inputElement.setAttribute('id', 'answer-input');
-inputElement.setAttribute('placeholder', '請輸入你的回答');
+inputElement.setAttribute('placeholder', '請輸入物種的名稱');
 formElement.appendChild(inputElement);
 
 const submitButton = document.createElement('button');
