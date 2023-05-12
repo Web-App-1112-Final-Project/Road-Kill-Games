@@ -6,10 +6,11 @@
 .car {
     position: absolute;
     bottom: 100px;
-    width: 60px;
+    width: 100px;
     margin: auto;
-    height: 100px;
-    background-color: cadetblue;
+    height: 120px;
+    /* background-color: cadetblue; */
+    background-image:url( './assets/car1.png' );
 }
 
 .g {
