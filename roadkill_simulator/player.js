@@ -61,7 +61,8 @@ const initRender = () => {
   }
 
   // car
-  let car = document.createElement('div')
+  let car = document.createElement('img')
+  car.src='./assets/car1.png'
   car.innerHTML = 'car'
   car.setAttribute('class', 'car')
   gameArea.appendChild(car)
