@@ -2,28 +2,32 @@
     overflow-y: hidden;
 }
 
+html {
+    background-color: grey;
+}
 
 .car {
     position: absolute;
     bottom: 100px;
-    width: 100px;
+    width: 75px;
     margin: auto;
-    height: 120px;
+    height: 100px;
     /* background-color: cadetblue; */
-    background-image:url( './assets/car1.png' );
+    /* background-image: url('./assets/car2.png'); */
 }
 
-.g {
+.game {
     margin-top: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.game {
-    background-color: #5A882D;
+.grass {
+    background-color: #ABB328;
     display: flex;
-    width: 600px;
+    width: 800px;
     height: 700px;
     justify-content: center;
 }
@@ -49,4 +53,10 @@
     /* height: 80px; */
     width: 10px;
     background-color: white;
+}
+
+.bush1 {
+    position: relative;
+    width: 50px;
+    height: calc(50px * 106 / 142);
 }

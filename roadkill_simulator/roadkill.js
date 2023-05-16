@@ -3,18 +3,29 @@ import { player, startAction } from "./player.js"
 
 const score = document.querySelector('.score')
 const startScreen = document.querySelector('.startScreen')
-const gameArea = document.querySelector('.gameArea')
+const startGameForm = document.querySelector('#startGame')
+const speedInput = document.querySelector('#speed');
+const grassArea = document.querySelector('.grass')
 
-const start = () => {
+
+const start = (e) => {
+  e.preventDefault()
   console.log('start')
+
+  let speed;
+  if (e.target[0] === speedInput) {
+    speed = parseInt(speedInput.value);
+    console.log(`The speed is ${speed}.`);
+  }
+
+  startGameForm.classList.toggle('hide')
   startScreen.classList.toggle('hide')
-  gameArea.classList.toggle('hide')
-  player.dispatch(startAction())
+  grassArea.classList.toggle('hide')
+  player.dispatch(startAction({ speed: speed }))
   window.requestAnimationFrame(playGame)
 }
 
-
-startScreen.addEventListener('click', start)
+startGameForm.addEventListener('submit', start)
 // document.addEventListener('keydown', pressOn)
 // document.addEventListener('keyup', pressOff)
 

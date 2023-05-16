@@ -9,12 +9,10 @@ const movelines = () => {
   lines.forEach(function (item) {
     let y = parseFloat(item.style.top) // 每條線離gameArea邊緣多少
     let speed = player.getState().player.speed
-    if (y >= 600 + 100 + 80) {
+    if (y >= 600 + 70 + 0) { //以前0是 80
       y = 0;
     }
     y += speed
-    console.log(y)
-
 
     if (y > gameAreaAbsoluteHeight + 20) {
       let len = parseFloat(item.style.height) - speed
