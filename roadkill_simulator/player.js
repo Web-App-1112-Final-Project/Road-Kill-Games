@@ -50,42 +50,12 @@ const rootReducer = {
 const player = appStore.configureStore({ reducer: rootReducer });
 // ---------
 
-// Update view: on init and listening (subscribe) to the player. Retrieve the state with [storeName].getState().[sliceName]
-const initRender = () => {
-
-  // lines on road
-  const gameArea = document.querySelector('.gameArea')
-  const grassArea = document.querySelector('.grass')
-
-  for (let x = 0; x < 5; x++) {
-    let div = document.createElement("div");
-    div.classList.add("line");
-    div.style.top = x * 170 + "px";
-    div.style.height = '70px'
-    gameArea.appendChild(div);
-  }
-
-  let bush1 = document.createElement('img')
-  bush1.src = './assets/bush1.png'
-  bush1.classList.add("bush1");
-  grassArea.appendChild(bush1);
-  bush1.style.left = 250 + 'px' //  -350 px ~ -250px; 250px ~ 350px
-
-  // car
-  let car = document.createElement('img')
-  car.src = './assets/car2.png'
-  car.innerHTML = 'car'
-  car.setAttribute('class', 'car')
-  gameArea.appendChild(car)
-
-}
-
 const renderplayer = () => {
   let car = document.querySelector('.car')
   car.style.left = player.getState().player.x + "px"
   car.style.bottom = player.getState().player.y + "px"
 }
-initRender()
+
 player.subscribe(renderplayer);
 
 export { up, down, left, right }

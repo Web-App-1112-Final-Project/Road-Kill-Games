@@ -57,6 +57,5 @@ html {
 
 .bush1 {
     position: relative;
-    width: 50px;
-    height: calc(50px * 106 / 142);
+    /* clip-path: inset(0px 0px 10px 0px); */
 }

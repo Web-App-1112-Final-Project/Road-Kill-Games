@@ -1,4 +1,4 @@
-import playGame from "./game.js"
+import playGame, { initRender } from "./game.js"
 import { player, startAction } from "./player.js"
 
 const score = document.querySelector('.score')
@@ -21,6 +21,7 @@ const start = (e) => {
   startGameForm.classList.toggle('hide')
   startScreen.classList.toggle('hide')
   grassArea.classList.toggle('hide')
+  initRender()
   player.dispatch(startAction({ speed: speed }))
   window.requestAnimationFrame(playGame)
 }
