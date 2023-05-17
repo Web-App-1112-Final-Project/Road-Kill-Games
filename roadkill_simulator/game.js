@@ -5,7 +5,7 @@ import { up, down, right, left } from "./player.js"
 // Update view: on init and listening (subscribe) to the player. Retrieve the state with [storeName].getState().[sliceName]
 
 const lineHeight = '50'
-const bushHeight = 30
+const bushHeight = 40
 let ga = document.querySelector(".gameArea");
 // const gameAreaAbsoluteHeight = ga.offsetHeight - ga.offsetTop // 前者是gameArea高度，後者是gameArea離最上面多遠
 
@@ -48,8 +48,11 @@ const movelines = () => {
     if (y >= ga.offsetHeight) { y = 0; } // 會影響有沒有縮完整才跳回去（應該要y == gameArea高度(ga.offsetHeight) 以後跳回去）
     y += speed
 
-    if (y > ga.offsetHeight - lineHeight) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
+    if (y + speed > ga.offsetHeight - lineHeight) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
       let len = parseFloat(item.style.height) - speed
+      if (len <= speed) {
+        len = 0
+      }
       item.style.height = len + 'px'
       item.style.top = y + "px";
     }
