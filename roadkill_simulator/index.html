@@ -12,10 +12,18 @@
 
 <body>
     <div class="score"></div>
-    <div class="g">
-        <div class="game">
-            <div class="startScreen">Welcome to the game</div>
-            <div class="gameArea hide"></div>
+    <div class="game">
+        <div class="startScreen" style="color: white;">Welcome to the game</div>
+        <div class="modal">
+            <form id="startGame">
+                <label for="speed">Speed</label>
+                <input type="range" min="1" max="6" value="1" name="Speed" id="speed">
+                <button>Start Game</button>
+            </form>
+        </div>
+
+        <div class="grass hide">
+            <div class="gameArea"></div>
         </div>
     </div>
 
