@@ -7,7 +7,7 @@ const initState = {
   speed: 3,
   drivespeed: 3,
   x: 200,
-  y: 100
+  y: 0
 }
 
 const playerSlice = appStore.createSlice({

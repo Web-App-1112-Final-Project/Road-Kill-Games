@@ -4,7 +4,8 @@ import { up, down, right, left } from "./player.js"
 
 // Update view: on init and listening (subscribe) to the player. Retrieve the state with [storeName].getState().[sliceName]
 
-const lineHeight = '70'
+const lineHeight = '50'
+const bushHeight = 30
 let ga = document.querySelector(".gameArea");
 // const gameAreaAbsoluteHeight = ga.offsetHeight - ga.offsetTop // 前者是gameArea高度，後者是gameArea離最上面多遠
 
@@ -13,10 +14,10 @@ const initRender = () => {
   const gameArea = document.querySelector('.gameArea')
   const grassArea = document.querySelector('.grass')
 
-  for (let x = 0; x < 5; x++) {
+  for (let x = 0; x < 7; x++) {
     let div = document.createElement("div");
     div.classList.add("line");
-    div.style.top = x * 150 + "px";
+    div.style.top = x * 110 + "px";
     div.style.height = lineHeight + 'px'
     gameArea.appendChild(div);
   }
@@ -27,7 +28,7 @@ const initRender = () => {
   grassArea.appendChild(bush1);
   bush1.style.left = 250 + 'px' //  -350 px ~ -250px; 250px ~ 350px
   bush1.style.top = 100 + 'px'
-  bush1.style.height = 50 + 'px'
+  bush1.style.height = bushHeight + 'px'
   bush1.style.clipPath = 'inset(0px 0px 0.001px 0px)'
 
   // car
@@ -47,12 +48,12 @@ const movelines = () => {
     if (y >= ga.offsetHeight) { y = 0; } // 會影響有沒有縮完整才跳回去（應該要y == gameArea高度(ga.offsetHeight) 以後跳回去）
     y += speed
 
-    if (y > ga.offsetHeight - 70) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
+    if (y > ga.offsetHeight - lineHeight) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
       let len = parseFloat(item.style.height) - speed
       item.style.height = len + 'px'
       item.style.top = y + "px";
     }
-    else if (y <= 70 && parseFloat(item.style.height) <= 70) {
+    else if (y <= lineHeight && parseFloat(item.style.height) <= lineHeight) {
       let len = parseFloat(item.style.height) + speed
       item.style.top = 0 + "px";
       item.style.height = len + 'px'
@@ -85,18 +86,18 @@ const movebushes = () => {
     // console.log(y)
     let speed = player.getState().player.speed
     if (y >= ga.offsetHeight) {
-      y = -50;
+      y = -1 * bushHeight;
       item.style.clipPath = `inset(50px 0px 0.001px 0px)`;
     } // 會影響有沒有縮完整才跳回去（應該要y == gameArea高度(ga.offsetHeight) 以後跳回去，跟線不一樣，他需要跳回-50，再慢慢揭露，線都長一樣所以只要管長度）
     y += speed
 
-    if (y > ga.offsetHeight - 50) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
+    if (y > ga.offsetHeight - bushHeight) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
       let toClip = getClipBottom(item.style.clipPath) + speed // 在現有的clippath數字再加上去speed的量
       const newInsetValue = `0px 0px ${toClip}px 0px`;
       item.style.clipPath = `inset(${newInsetValue})`;
       item.style.top = y + "px";
     }
-    else if (y <= 50) {
+    else if (y <= bushHeight) {
       let toClipTop = getClipTop(item.style.clipPath) - speed
       const newInsetValue = `${toClipTop}px 0px 0.001px 0px`;
       item.style.clipPath = `inset(${newInsetValue})`;
