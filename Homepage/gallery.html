@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>路殺</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+<body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center" style="z-index: 2000; opacity: 0.8;" id="topNavBar">
+      <div class="container-fluid text-center">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" href="index.html" >
+          <strong>路殺</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" >
+                  遊戲選單
+                </a>
+                <ul class="dropdown-menu" >
+                  <li>
+                  <a class="dropdown-item" href="#">動物記憶配對</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="#">路殺模擬器</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="#">物種鑑定師</a>
+                  </li>
+                </ul>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">動物圖鑑</a>
+            </li>
+          </ul>
+                <div class="search-input">
+                  <form id="search" action="#">
+                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End-->
+          <!-- 動物圖鑑 -->
+          <div class="animal-gallery">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h3>動物圖鑑</h3>
+                </div>
+                <div class="modal" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="z-index: 999999;">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="ModalLabel" style="text-align: center;"></h4>
+                        <h5 class="modal-title" id="ModalSciName" style="text-align: center;font-style: italic;"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <img id="ModalImage" class="item" src="">
+                      <div class="modal-body" id="ModalContent" style="padding: 10px 30px;">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center text-center">
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" id="owl" data-bs-toggle="modal" data-bs-target="#Modal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Collared_Scops_Owl%28Otus_lettia%29_by_Jack_Walf_.jpg/1280px-Collared_Scops_Owl%28Otus_lettia%29_by_Jack_Walf_.jpg" alt="">
+                      <h5>領角鴞<br><span>Otus lettia</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="manis"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Manis_pentadactyla_%2829054818144%29.jpg" alt="">
+                      <h5>穿山甲<br><span>Manis pentadactyla</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="leopardCat"><img src="https://web3.nmns.edu.tw/Exhibits/107/LeopardCat/assets/images/in-cont-3-1200x800.jpg" alt="">
+                      <h5>石虎<br><span>Prionailurus bengalensis</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="frog"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Rana_sauteri_20121103.jpg" alt="">
+                      <h5>梭德氏樹蛙<br><span>Rana sauteri</span></h5></a>
+                    </div>
+                  </div>
+                <div class="row justify-content-center text-center">
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="turtle"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ocadia_sinensis.jpg/1280px-Ocadia_sinensis.jpg" alt="">
+                      <h5>斑龜<br><span>Mauremys sinensis</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="crab"><img src="https://roadkill.tw/sites/dproadkill/files/content/p1130866.jpg" alt="">
+                      <h5>奧氏後相手蟹<br><span>Metasesarma aubryi</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="butterfly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Euploea_tulliolus_koxinga_ventral_view_20150202.jpg/1280px-Euploea_tulliolus_koxinga_ventral_view_20150202.jpg" alt="">
+                      <h5>小紫斑蝶<br><span>Euploea tulliolus</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="paguma"><img src="https://np.cpami.gov.tw/filesys/image/01_chinese/03_conservation/result/20090909_conservation_02.jpg" alt="">
+                      <h5>白鼻心<br><span>Paguma larvata</span></h5></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center text-center">
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="melogale"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Melogale_moschata_%28male%29_Praha_zoo_02.2011_01.jpg" alt="">
+                      <h5>鼬獾<br><span>Melogale moschata</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="crab"><img src="https://roadkill.tw/sites/dproadkill/files/content/p1130866.jpg" alt="">
+                      <h5>奧氏後相手蟹<br><span>Metasesarma aubryi</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="butterfly"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Euploea_tulliolus_koxinga_ventral_view_20150202.jpg/1280px-Euploea_tulliolus_koxinga_ventral_view_20150202.jpg" alt="">
+                      <h5>小紫斑蝶<br><span>Euploea tulliolus</span></h5></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 justify-content-center">
+                    <div class="item">
+                      <a href="" onClick="javascript:popUp(this.id);" data-bs-toggle="modal" data-bs-target="#Modal" id="paguma"><img src="https://np.cpami.gov.tw/filesys/image/01_chinese/03_conservation/result/20090909_conservation_02.jpg" alt="">
+                      <h5>白鼻心<br><span>Paguma larvata</span></h5></a>
+                    </div>
+                  </div>
+                </div>
+            　</div>
+            </div>
+          </div>
+      </div>
+
+  </main>
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="#">NTU Web App Group 1</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+      <!-- Custom scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
+
+
+</body>
+</html>
+

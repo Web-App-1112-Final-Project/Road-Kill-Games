@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 </head>
 <body>
       <!--Main Navigation-->
@@ -69,14 +70,14 @@
     <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center" style="z-index: 2000; opacity: 0.8;" id="topNavBar">
       <div class="container-fluid text-center">
         <!-- Navbar brand -->
-        <a class="navbar-brand nav-link" href="#" >
+        <a class="navbar-brand nav-link" href="#introCarousel" >
           <strong>路殺</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" >
@@ -95,14 +96,20 @@
                 </ul>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">動物圖鑑</a>
+              <a class="nav-link" href="gallery.html">動物圖鑑</a>
             </li>
           </ul>
+                <div class="search-input">
+                  <form id="search" action="#">
+                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </div>
 
         </div>
       </div>
     </nav>
-    <!-- Navbar -->
+    <!-- Navbar End-->
 
     <!-- Carousel wrapper -->
     <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
@@ -126,7 +133,7 @@
                     藉由簡單的動物記憶配對遊戲讓玩家建立動物名稱與樣貌的連結，<br>
                 快速認識經常遭到路殺的動物。</h5>
                 <a class="btn btn-outline-light btn-lg m-2"
-                  href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank" role="button">進入遊戲</a>
+                  href="#" target="_blank" role="button">進入遊戲</a>
               </div>
             </div>
           </div>
@@ -140,10 +147,10 @@
                 <h1 class="mb-2">路殺模擬器</h1>
                 <h5 class="mb-2">當我們的足跡深入了動物的棲地，我們該如何避免動物死傷的產生呢？<br>
                     透過這款小遊戲，我們希望能讓玩家了解路殺的原因及減少路殺的方法，<br>
-                    理解到人類的日常生活如何對動物的生存產生影響。
+                    理解到人類的日常通勤如何影響動物的生存棲地、甚至威脅到牠們的生命。
                 </h5>
                 <a class="btn btn-outline-light btn-lg m-2"
-                  href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank" role="button">進入遊戲</a>
+                  href="#" target="_blank" role="button">進入遊戲</a>
               </div>
             </div>
           </div>
@@ -161,9 +168,11 @@
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="text-white text-center">
                 <h1 class="mb-2">物種鑑定師</h1>
-                <h5 class="mb-2">A</h5>
+                <h5 class="mb-2">當路殺的傷害已經造成，我們還能為這條逝去的生命做些什麼？<br>
+                    透過〈物種鑑定師〉，我們希望玩家可以理解到路殺紀錄的重要性，<br>
+                    了解回報路殺的流程，並且體驗鑑定路殺動物的難處。</h5>
                 <a class="btn btn-outline-light btn-lg m-2"
-                  href="https://mdbootstrap.com/docs/standard/content-styles/masks/" target="_blank" role="button">進入遊戲</a>
+                  href="#" target="_blank" role="button">進入遊戲</a>
               </div>
             </div>
           </div>
@@ -190,10 +199,10 @@
     <div class="container">
       <!--Section: Content-->
       <section class="text-center">
-        <h4 class="mb-5"><strong>動物圖鑑</strong></h4>
+        <h4 class="mb-5"><a href="gallery.html"><strong>動物圖鑑</strong><a></h4>
         <div class="row no-gutters">
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Collared_Scops_Owl%28Otus_lettia%29_by_Jack_Walf_.jpg/1280px-Collared_Scops_Owl%28Otus_lettia%29_by_Jack_Walf_.jpg" alt="Avatar"  class="img-fluid">
@@ -206,7 +215,7 @@
                 </div>
             </div></a>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front" style="color: white;">
                       <p>領角鴞<br>
@@ -219,7 +228,7 @@
                 </div></a>
             </div>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Manis_pentadactyla_%2829054818144%29.jpg" alt="Avatar"  class="img-fluid">
@@ -232,7 +241,7 @@
                 </div>
             </div></a>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front" style="color: white;">
                       <p>穿山甲<br>
@@ -247,7 +256,7 @@
         </div>
         <div class="row no-gutters">
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front" style="color: white;">
                       <p>石虎<br>
@@ -260,7 +269,7 @@
                 </div></a>
             </div>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img src="https://web3.nmns.edu.tw/Exhibits/107/LeopardCat/assets/images/in-cont-1-1200x800.jpg" alt="Avatar"  class="img-fluid">
@@ -273,7 +282,7 @@
                 </div>
             </div></a>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front" style="color: white;">
                       <p>梭德氏樹蛙<br>
@@ -286,7 +295,7 @@
                 </div></a>
             </div>
             <div class="col-sm-3">
-                <a href="#"><div class="flip-card">
+                <a href="gallery.html"><div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img src="https://taieol.tw/files/muse_taieol/muse_styles/w1024/mcode/d3ed7586b2090793a72865000a6bbb74.jpg?itok=ThUneXS_" alt="Avatar"  class="img-fluid">

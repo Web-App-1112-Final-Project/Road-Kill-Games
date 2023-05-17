@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
@@ -63,3 +65,57 @@
   background-color: black;
 }
 
+.animal-gallery {
+    margin-top: 60px;
+    padding: 30px;
+    border-radius: 23px;   
+    box-sizing: border-box;
+}
+.animal-gallery h3 {
+    font-weight:bold;
+    text-align: center !important;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+}
+
+
+.animal-gallery .item {
+  background-color: rgb(247, 246, 237);
+  padding: 30px 15px;
+  border-radius: 23px;
+  margin-bottom: 30px;
+}
+
+.animal-gallery .item .item {
+  padding: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  margin-bottom: 0px;
+}
+
+.animal-gallery .item img {
+  border-radius: 23px;
+}
+
+.animal-gallery .item h4 {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+.animal-gallery .item span {
+  color: #666;
+  display: block;
+  margin-top: 7px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.animal-gallery .item img {
+  height: 150px;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
