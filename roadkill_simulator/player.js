@@ -6,7 +6,7 @@ const initState = {
   start: false,
   speed: 3,
   drivespeed: 3,
-  x: 200,
+  x: 150,
   y: 0
 }
 
