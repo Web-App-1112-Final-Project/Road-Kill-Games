@@ -1,5 +1,5 @@
-import playGame, { initRender } from "./game.js"
-import { player, startAction } from "./player.js"
+import playGame, { initRender } from "./game/game.js"
+import { player, startAction } from "./game/player.js"
 
 const score = document.querySelector('.score')
 const startScreen = document.querySelector('.startScreen')
