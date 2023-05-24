@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Kill Simulator</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="score"></div>
+    <div class="game">
+        <div class="startScreen" style="color: white;">Welcome to the game</div>
+        <div class="modal">
+            <form id="startGame">
+                <label for="speed">Speed</label>
+                <input type="range" min="1" max="6" value="1" name="Speed" id="speed">
+                <button>Start Game</button>
+            </form>
+        </div>
+
+        <div class="grass hide">
+            <div class="gameArea"></div>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/@reduxjs/toolkit@1.1.0/dist/redux-toolkit.umd.js"></script>
+    <script type="module" src="./roadkill.js"></script>
+</body>
+
+</html>
