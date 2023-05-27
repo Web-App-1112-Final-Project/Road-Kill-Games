@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>路殺</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/roadkill_game_reset.css">
+    <link rel="stylesheet" href="./css/roadkill_game_style.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+<body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+
+      .carousel-item:nth-child(1) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center" style="z-index: 2000; opacity: 0.8;" id="topNavBar">
+      <div class="container-fluid text-center">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" href="./index.html" >
+          <strong>路殺</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" >
+                  遊戲選單
+                </a>
+                <ul class="dropdown-menu" >
+                  <li>
+                  <a class="dropdown-item" href="#">動物記憶配對</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="#">路殺模擬器</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="./game3.html">物種鑑定師</a>
+                  </li>
+                </ul>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">動物圖鑑</a>
+            </li>
+          </ul>
+                <div class="search-input">
+                  <form id="search" action="#">
+                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End-->
+  </header>
+  <!--Main Navigation-->
+
+  <!-- Game start -->
+  <div class='game2_inner'>
+    <div class="score"></div>
+    <div class="game">
+        <div class="startScreen" style="color: white;">Welcome to the game</div>
+        <div class="modal_game2">
+            <form id="startGame">
+                <label for="speed">Speed</label>
+                <input type="range" min="1" max="6" value="1" name="Speed" id="speed">
+                <button>Start Game</button>
+            </form>
+        </div>
+
+        <div class="grass hide">
+            <div class="gameArea"></div>
+        </div>
+    </div>
+  </div>
+    <!-- Game end -->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">NTU Web App Group 1</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/@reduxjs/toolkit@1.1.0/dist/redux-toolkit.umd.js"></script>
+    <script type="module" src="./js/roadkill.js"></script>
+</body>
+</html>
