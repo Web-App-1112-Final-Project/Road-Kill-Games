@@ -6,6 +6,7 @@ const initState = {
   start: false,
   speed: 3,
   drivespeed: 3,
+  score: 0,
   x: 150,
   y: 0
 }
@@ -36,11 +37,15 @@ const playerSlice = appStore.createSlice({
       state.x += state.drivespeed
       return state;
     },
+    addScore: state => {
+      state.score += 1
+      return state
+    }
   }
 });
 
 
-const { up, down, left, right, start } = playerSlice.actions;
+const { up, down, left, right, start, addScore } = playerSlice.actions;
 
 const rootReducer = {
   player: playerSlice.reducer,
@@ -59,4 +64,4 @@ const renderplayer = () => {
 player.subscribe(renderplayer);
 
 export { up, down, left, right }
-export { player, start as startAction }
+export { player, start as startAction, addScore }

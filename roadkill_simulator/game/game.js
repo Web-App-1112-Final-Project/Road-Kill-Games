@@ -1,5 +1,5 @@
 import keys from "./key.js";
-import { player } from "./player.js"
+import { player, addScore } from "./player.js"
 import { up, down, right, left } from "./player.js"
 import { movelines, addlines } from "./lines.js";
 import { movebushes, addBushes } from "./bushes.js";
@@ -38,6 +38,7 @@ const playGame = () => {
   const road = gameArea.getBoundingClientRect()
   const car = document.querySelector('.car')
   const speed = player.getState().player.speed
+  const score = document.querySelector('.score')
 
   movelines(speed)
   movebushes(speed)
@@ -56,6 +57,8 @@ const playGame = () => {
     if (keys.getState().key.ArrowLeft && player.getState().player.x > 0) {
       player.dispatch(left())
     }
+    player.dispatch(addScore())
+    score.innerHTML = player.getState().player.score
   }
   window.requestAnimationFrame(playGame)
 }
