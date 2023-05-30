@@ -1,9 +1,6 @@
-import { player } from "./player.js"
-
 const lineHeight = '50'
 const ga = document.querySelector(".gameArea");
 // const gameAreaAbsoluteHeight = ga.offsetHeight - ga.offsetTop // 前者是gameArea高度，後者是gameArea離最上面多遠
-const speed = player.getState().player.speed
 
 const addlines = () => {
   for (let x = 0; x < 7; x++) {
@@ -17,7 +14,7 @@ const addlines = () => {
   }
 }
 
-const movelines = () => {
+const movelines = (speed) => {
   let lines = document.querySelectorAll(".line");
   lines.forEach(function (item) {
     let y = parseFloat(item.style.top) // 每條線離gameArea邊緣多少 700 px

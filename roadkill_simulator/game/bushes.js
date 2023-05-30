@@ -1,8 +1,6 @@
-import { player } from "./player.js";
 
 const ga = document.querySelector(".gameArea");
 const grassArea = document.querySelector(".grass")
-const speed = player.getState().player.speed
 const Nbush = 14
 
 const getClipBottom = (clipPathValue) => {
@@ -58,9 +56,10 @@ const addBushes = () => {
   }
 }
 
-const movebushes = () => {
+const movebushes = (speed) => {
   let bushes = document.querySelectorAll(".bush");
   bushes.forEach(function (item) {
+    // http://127.0.0.1:5500/roadkill_simulator/game/assets/bush3.png
     let bush_id = parseInt(item.src.match(/(\d+)(?!.*\d+)/)[0])
     let bushHeight = bush_height_obj[bush_id]
     let bushWidth = bush_width_obj[bush_id]

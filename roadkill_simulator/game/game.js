@@ -3,6 +3,7 @@ import { player } from "./player.js"
 import { up, down, right, left } from "./player.js"
 import { movelines, addlines } from "./lines.js";
 import { movebushes, addBushes } from "./bushes.js";
+import { moveAnimals, addAnimals } from "./animal.js";
 
 
 const initRender = () => {
@@ -12,6 +13,7 @@ const initRender = () => {
 
   addlines()
   addBushes()
+  addAnimals()
 
   let shadow = document.createElement('img')
   shadow.src = './game/assets/shadow2.png'
@@ -25,7 +27,6 @@ const initRender = () => {
   // car
   let car = document.createElement('img')
   car.src = './game/assets/car2.png'
-  car.innerHTML = 'car'
   car.setAttribute('class', 'car')
   gameArea.appendChild(car)
 }
@@ -36,9 +37,11 @@ const playGame = () => {
   const gameArea = document.querySelector('.gameArea')
   const road = gameArea.getBoundingClientRect()
   const car = document.querySelector('.car')
+  const speed = player.getState().player.speed
 
-  movelines()
-  movebushes()
+  movelines(speed)
+  movebushes(speed)
+  moveAnimals(car, speed)
   if (player.getState().player.start) {
 
     if (keys.getState().key.ArrowUp && player.getState().player.y < road.bottom - car.offsetHeight - road.y) {

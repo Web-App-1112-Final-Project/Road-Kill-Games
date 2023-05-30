@@ -22,6 +22,7 @@ const start = (e) => {
   startScreen.classList.toggle('hide')
   grassArea.classList.toggle('hide')
   initRender()
+
   player.dispatch(startAction({ speed: speed }))
   window.requestAnimationFrame(playGame)
 }
