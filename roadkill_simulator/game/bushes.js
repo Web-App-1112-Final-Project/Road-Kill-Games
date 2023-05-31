@@ -1,7 +1,6 @@
 
 const ga = document.querySelector(".gameArea");
 const grassArea = document.querySelector(".grass")
-const Nbush = 14
 
 const getClipBottom = (clipPathValue) => {
   const valuesArray = clipPathValue.split(' '); // Split the string into an array of values
@@ -27,36 +26,34 @@ function getRandomNumber(width) {
 }
 
 
-const bush_height_obj = {}
-const bush_width_obj = {}
-for (let x = 1; x <= Nbush; x++) {
-  const image = new Image();
-  image.src = `./game/assets/bush${x}.png`;
-  image.addEventListener('load', function () {
-    const height = image.naturalHeight;
-    const width = image.naturalWidth;
-    bush_height_obj[x] = height / 2
-    bush_width_obj[x] = width / 2
-  });
+// const bush_height_obj = {}
+// const bush_width_obj = {}
+// for (let x = 1; x <= Nbush; x++) {
+//   const image = new Image();
+//   image.src = `./game/assets/bush${x}.png`;
+//   image.addEventListener('load', function () {
+//     const height = image.naturalHeight;
+//     const width = image.naturalWidth;
+//     bush_height_obj[x] = height / 2
+//     bush_width_obj[x] = width / 2
+//   });
+// }
+
+const addBushes = (x, height, width) => {
+  let bush = document.createElement('img')
+  bush.src = `./game/assets/bush${x}.png`
+  bush.classList.add("bush");
+  grassArea.appendChild(bush);
+  bush.style.position = 'absolute';
+  bush.style.left = getRandomNumber(width) + 'px'
+  // bush.style.left = 0 + 'px'
+  bush.style.top = x * 50 + 'px'
+  // bush.style.top = 0 + 'px'
+  bush.style.height = height + 'px'
+  bush.style.clipPath = 'inset(0px 0px 0.001px 0px)'
 }
 
-const addBushes = () => {
-  for (let x = 1; x <= Nbush; x++) {
-    let bush = document.createElement('img')
-    bush.src = `./game/assets/bush${x}.png`
-    bush.classList.add("bush");
-    grassArea.appendChild(bush);
-    bush.style.position = 'absolute';
-    bush.style.left = getRandomNumber(bush_width_obj[x]) + 'px'
-    // bush.style.left = 0 + 'px'
-    bush.style.top = x * 50 + 'px'
-    // bush.style.top = 0 + 'px'
-    bush.style.height = bush_height_obj[x] + 'px'
-    bush.style.clipPath = 'inset(0px 0px 0.001px 0px)'
-  }
-}
-
-const movebushes = (speed) => {
+const movebushes = (speed, bush_height_obj, bush_width_obj) => {
   let bushes = document.querySelectorAll(".bush");
   bushes.forEach(function (item) {
     // http://127.0.0.1:5500/roadkill_simulator/game/assets/bush3.png
@@ -100,4 +97,4 @@ const movebushes = (speed) => {
 }
 
 export { movebushes, addBushes }
-export { bush_width_obj, bush_height_obj }
+// export { bush_width_obj, bush_height_obj }

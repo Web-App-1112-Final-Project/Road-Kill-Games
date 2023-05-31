@@ -1,4 +1,4 @@
-import { player, endAction } from "./player.js"
+import { player, endAction, hit } from "./player.js"
 const ga = document.querySelector(".gameArea");
 
 const getClipBottom = (clipPathValue) => {
@@ -54,10 +54,24 @@ const addAnimals = () => {
   }
 }
 
+const resetAnimals = () => {
+  let c = 0
+  let animals = document.querySelectorAll(".animal");
+  for (const animal of animals) {
+    animal.style.top = -300 * (c + 1) + 'px'
+    c += 1
+    const url = animal.src
+    const tempurl = url.split('/').pop();
+    const animal_id = tempurl.substring(0, tempurl.lastIndexOf('.'));
+    animal.style.height = animal_height_obj[animal_id] + 'px'
+    animal.style.clipPath = 'inset(0px 0px 0.001px 0px)'
+  }
+}
 
-const isCollide = (a, b) => {
-  const aRect = a.getBoundingClientRect();
-  const bRect = b.getBoundingClientRect();
+
+const isCollide = (car, item) => {
+  const aRect = car.getBoundingClientRect();
+  const bRect = item.getBoundingClientRect();
   return !(
     aRect.bottom < bRect.top ||
     aRect.top > bRect.bottom ||
@@ -66,9 +80,14 @@ const isCollide = (a, b) => {
   );
 }
 
-const endGame = (player) => {
+const endGame = (player, item) => {
+  const url = item.src
+  const tempurl = url.split('/').pop();
+  const animal_id = tempurl.substring(0, tempurl.lastIndexOf('.'));
+
+  player.dispatch(hit({ animal: animal_id }))
   player.dispatch(endAction())
-  console.log('end?', player.getState().player.start)
+  // console.log('end?', player.getState().player.start)
   return player
 }
 
@@ -76,7 +95,7 @@ const moveAnimals = (car, speed, player) => {
   let Animals = document.querySelectorAll(".animal");
   Animals.forEach(function (item) {
     if (isCollide(car, item)) {
-      player = endGame(player)
+      player = endGame(player, item)
     }
     // http://127.0.0.1:5500/roadkill_simulator/game/animal_image/pangolin_340_242.png
     const url = item.src
@@ -122,5 +141,5 @@ const moveAnimals = (car, speed, player) => {
   return player
 }
 
-export { moveAnimals, addAnimals }
+export { moveAnimals, addAnimals, resetAnimals }
 export { animal_width_obj, animal_height_obj }
