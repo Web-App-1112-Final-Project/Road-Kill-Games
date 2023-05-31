@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>路殺</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/g1_style.css" />
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+<body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+
+      .carousel-item:nth-child(1) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center" style="z-index: 2000; opacity: 0.8;" id="topNavBar">
+      <div class="container-fluid text-center">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" href="./index.html" >
+          <strong>路殺</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" >
+                  遊戲選單
+                </a>
+                <ul class="dropdown-menu" >
+                  <li>
+                  <a class="dropdown-item" href="./game1.html">動物記憶配對</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="#">路殺模擬器</a>
+                  </li>
+                  <li>
+                  <a class="dropdown-item" href="./game3.html">物種鑑定師</a>
+                  </li>
+                </ul>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">動物圖鑑</a>
+            </li>
+          </ul>
+                <div class="search-input">
+                  <form id="search" action="#">
+                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                    <i class="fa fa-search"></i>
+                  </form>
+                </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End-->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Game Start-->
+  <div class="game1_inner">
+    <h1>動物記憶配對</h1>
+    <div class="topTools">            
+        <!-- <span class="moves"> Move(s)</span> -->
+        <div class="time">
+            <span class="minute">00</span>
+            <span>:</span>
+            <span class="second">00</span>
+        </div>
+               
+        <span class="refresh"><img src="assets/g1_images/refresh.svg" alt="refreshImage"></i></span>
+    </div> 
+
+<div class="memory-game">    
+    <div class="memory-card" data-id="1">    
+        <img class="front-face" src="assets/g1_images/owl.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="1">
+        <img class="front-face" src="assets/g1_images/owl.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="2">
+        <img class="front-face" src="assets/g1_images/grass_owl.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="2">
+        <img class="front-face" src="assets/g1_images/grass_owl.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="3">
+        <img class="front-face" src="assets/g1_images/rock_tiger.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="3">
+        <img class="front-face" src="assets/g1_images/rock_tiger.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+<!-- </div> -->
+<!-- <div class="memory-game"> -->
+    <div class="memory-card" data-id="4">
+        <img class="front-face" src="assets/g1_images/butterfly.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="4">
+        <img class="front-face" src="assets/g1_images/butterfly.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="5">
+        <img class="front-face" src="assets/g1_images/crab.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="5">
+        <img class="front-face" src="assets/g1_images/crab.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+        <!--
+        <div class="back-face"></div>
+        -->
+    </div>
+    <div class="memory-card" data-id="6">
+        <img class="front-face" src="assets/g1_images/mountain.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="6">
+        <img class="front-face" src="assets/g1_images/mountain.png" alt="Front image">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+<!-- </div> -->
+<!-- <div class="memory-game"> -->
+    <div class="memory-card" data-id="7">
+        <img class="front-face" src="assets/g1_images/Paguma_larvata.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="7">
+        <img class="front-face" src="assets/g1_images/Paguma_larvata.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="8">
+        <img class="front-face" src="assets/g1_images/tree_frog.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="8">
+        <img class="front-face" src="assets/g1_images/tree_frog.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="9">
+        <img class="front-face" src="assets/g1_images/turtle_dot.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+    <div class="memory-card" data-id="9">
+        <img class="front-face" src="assets/g1_images/turtle_dot.png">
+        <img class="back-face" src="assets/g1_images/back.png">
+    </div>
+</div>
+
+<!-- 結算畫面 -->
+<section id="congratsSection" class="hidden">   
+  <div id="congratsDiv">
+    <div class="congratTitle">
+        <p>深入認識剛才的動物！</p>
+    </div>
+    <!--顯示時間-->
+    <p class="final">
+        <span id="totalTime"></span>
+    </p>
+    <!--資訊-->
+    <div id = random-information>
+        <img class="final_img">
+        <div class="final_text">
+            <p>
+
+            </p>
+        </div>
+    </div>
+    <div >
+        <img class="final_img" src="">
+    
+        <div class="final_text" src="">    
+            <p>
+
+            </p>
+
+        </div>
+    </div>
+    <div class = "again">
+        <p>再來一場</p>
+    </div>
+    <!-- <p class="final">
+        <span id="totalTime"></span>
+    </p> -->
+    <!-- <br> -->
+    <!-- <p> -->
+        <!-- <a class="again">Play Again !! </a> -->
+    <!-- </p> -->
+  </div>
+</section>
+
+<script src="js/g1_script.js"></script>   
+  </div>
+
+  <!--Game End-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">NTU Web App Group 1</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    
+</body>
+</html>
