@@ -118,6 +118,17 @@ function checkAnswer(answer) {
 
 // 顯示最終得分
 function showScore() {
+  const addTask = (name) => {
+    axios
+      .post('http://localhost:5000/api_game3/save', {
+        name: name,
+        score: (correctAnswers / questions.length) * 100,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
   const container = document.querySelector('.container');
   const info_id = correctAnswers % showInfos.length;
   // console.log(info_id);
@@ -128,7 +139,37 @@ function showScore() {
     <img src = ${showInfos[info_id].image} class="pic_identify"></img>
     <h3></h4>
     <button type="button" onclick="location.reload()" class="accept">重新開始</button>
+    <h3></h3>
+    <h4>若想參與排名競爭，請輸入你的大名：</h4>
   `;
+
+  const formElement = document.createElement('form');
+  formElement.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputElement = document.querySelector('#name-input');
+    const name = inputElement.value;
+    addTask(name);
+    inputElement.value = '';
+    alert("提交成功");
+    inputElement.setAttribute('disabled', "disabled");
+    submitButton.setAttribute('disabled', 'disabled');
+    
+  });
+  const answerElement = document.querySelector('.container');
+  answerElement.appendChild(formElement);
+
+  const inputElement = document.createElement('input');
+  inputElement.setAttribute('type', 'text');
+  inputElement.setAttribute('id', 'name-input');
+  inputElement.setAttribute('placeholder', '請輸入名字');
+  formElement.appendChild(inputElement);
+
+  const submitButton = document.createElement('button');
+  submitButton.setAttribute('type', 'submit');
+  submitButton.textContent = '提交';
+  formElement.appendChild(submitButton);
+
+
 }
 
 // 啟動測驗
