@@ -6,13 +6,28 @@ import { movebushes, addBushes } from "./bushes.js";
 import { moveAnimals, addAnimals } from "./animal.js";
 
 
+const Nbush = 14
+const bush_height_obj = {}
+const bush_width_obj = {}
+for (let x = 1; x <= Nbush; x++) {
+  const image = new Image();
+  image.src = `./game/assets/bush${x}.png`;
+  image.addEventListener('load', function () {
+    const height = image.naturalHeight;
+    const width = image.naturalWidth;
+    addBushes(x, height / 2, width / 2)
+  });
+}
+
+addlines()
+
 const initRender = () => {
   // lines on road
   const gameArea = document.querySelector('.gameArea')
   const grassArea = document.querySelector('.grass')
+  const modal = document.querySelector('.modal')
+  modal.classList.add('hide')
 
-  addlines()
-  addBushes()
   addAnimals()
 
   let shadow = document.createElement('img')
@@ -32,6 +47,10 @@ const initRender = () => {
 }
 
 
+
+const animal_obj = { tiger: '石虎', owl: '領角鴞', butterfly: '小紫斑蝶', crab: '奧氏後相手蟹', 'turtle': '班龜', pangolin: '穿山甲' }
+
+
 const playGame = (player) => {
 
   const gameArea = document.querySelector('.gameArea')
@@ -41,11 +60,10 @@ const playGame = (player) => {
   const score = document.querySelector('.score')
 
   movelines(speed)
-  movebushes(speed)
+  movebushes(speed, bush_height_obj, bush_width_obj)
   player = moveAnimals(car, speed, player)
 
   if (player.getState().player.start) {
-    console.log(player.getState().player.start)
     if (keys.getState().key.ArrowUp && player.getState().player.y < road.bottom - car.offsetHeight - road.y) {
       player.dispatch(up())
     }
@@ -63,7 +81,16 @@ const playGame = (player) => {
 
     window.requestAnimationFrame(() => playGame(player))
   }
+  else {
+    const modal = document.querySelector('.endModal')
+    const modalTitle = document.querySelector('.endModalTitle')
+    const hittedAnimal = player.getState().player.hit.split('_')[0];
 
+    const hittedAnimalName = animal_obj[hittedAnimal]
+    modal.classList.remove('hide')
+    modalTitle.innerHTML = `你撞到了「${hittedAnimalName}」`
+
+  }
 }
 
 

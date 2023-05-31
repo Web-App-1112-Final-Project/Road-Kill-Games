@@ -1,32 +1,44 @@
 import playGame, { initRender } from "./game/game.js"
 import { player, startAction, endAction } from "./game/player.js"
+import { resetAnimals } from "./game/animal.js"
 
-const startScreen = document.querySelector('.startScreen')
-const startGameForm = document.querySelector('#startGame')
+// const startScreen = document.querySelector('.startScreen')
+const modal = document.querySelector('.modal')
+const endModal = document.querySelector('.endModal')
+const startGameBtn = document.querySelector('.modalBtn.start')
+const restartGameBtn = document.querySelector('.modalBtn.restart')
 const speedInput = document.querySelector('#speed');
-const grassArea = document.querySelector('.grass')
+const speedNum = document.querySelector('#speedNum')
 
 
+const speedOnChange = (e) => {
+  speedNum.innerHTML = e.target.value
+}
+
+let animationId = 0;
 const start = (e) => {
   e.preventDefault()
   console.log('start')
 
-  let speed;
-  if (e.target[0] === speedInput) {
-    speed = parseInt(speedInput.value);
-    console.log(`The speed is ${speed}.`);
-  }
+  let speed = parseInt(speedNum.innerHTML)
+  modal.classList.add('hide')
+  endModal.classList.add('hide')
 
-  startGameForm.classList.toggle('hide')
-  startScreen.classList.toggle('hide')
-  grassArea.classList.toggle('hide')
-  initRender()
+  const tips = document.querySelector('.tips')
+  tips.classList.remove('hide')
+  // startScreen.classList.toggle('hide')
+  // grassArea.classList.toggle('hide')
+  if (animationId === 0) initRender()
+  else resetAnimals()
 
   player.dispatch(startAction({ speed: speed }))
-  window.requestAnimationFrame(() => playGame(player))
+  window.cancelAnimationFrame(animationId);
+  animationId = window.requestAnimationFrame(() => playGame(player))
 }
 
-startGameForm.addEventListener('submit', start)
+speedInput.addEventListener('change', (e) => speedOnChange(e))
+startGameBtn.addEventListener('click', start)
+restartGameBtn.addEventListener('click', start)
 // document.addEventListener('keydown', pressOn)
 // document.addEventListener('keyup', pressOff)
 

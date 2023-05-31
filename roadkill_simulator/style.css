@@ -50,10 +50,144 @@ html {
     /* left: 42%; */
 }
 
-.hide {
-    display: none;
-}
+
 
 .line {
     position: absolute;
+}
+
+.modal {
+    z-index: 1;
+    top: 10%;
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.modalContent {
+    /* margin: auto 20%; */
+    justify-content: center;
+    text-align: center;
+    height: 45%;
+    width: 400px;
+    padding: auto;
+    background-color: #FDF2D4;
+    border-radius: 25px;
+}
+
+.modalContent label {
+    font-size: 20px;
+}
+
+.modalContent input[type="range"] {
+    width: 180px;
+    height: 16px;
+    outline: none;
+    background: none;
+}
+
+.modalTitle {
+    color: #0f0f4b;
+    width: 100%;
+    margin: auto;
+    font-size: 40px;
+    font-weight: 700;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalBtnWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.modalBtn {
+    background-color: #C7DC3C;
+    border: 3px solid black;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 25px;
+    height: 35px;
+    width: 40%;
+    margin: auto 3%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalBtn:hover {
+    cursor: pointer;
+    color: #0f0f4b;
+    background-color: #c7dc3ca8;
+    border: 3px solid #0f0f4b;
+}
+
+
+.tips {
+    margin-top: 30px;
+    height: 40%;
+    width: 85%;
+}
+
+.endModal {
+    z-index: 1;
+    top: 10%;
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.endModalContent {
+    /* margin: auto 20%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85%;
+    width: 400px;
+    padding: auto;
+    background-color: #FDF2D4;
+    border-radius: 25px;
+}
+
+.endModalTitle {
+    color: #0f0f4b;
+    width: 100%;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.endModalBtnWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 10%;
+}
+
+
+.hide {
+    display: none;
 }
