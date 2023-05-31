@@ -1,3 +1,4 @@
+import { player, endAction } from "./player.js"
 const ga = document.querySelector(".gameArea");
 
 const getClipBottom = (clipPathValue) => {
@@ -65,11 +66,17 @@ const isCollide = (a, b) => {
   );
 }
 
-const moveAnimals = (car, speed) => {
+const endGame = (player) => {
+  player.dispatch(endAction())
+  console.log('end?', player.getState().player.start)
+  return player
+}
+
+const moveAnimals = (car, speed, player) => {
   let Animals = document.querySelectorAll(".animal");
   Animals.forEach(function (item) {
     if (isCollide(car, item)) {
-      console.log('hit')
+      player = endGame(player)
     }
     // http://127.0.0.1:5500/roadkill_simulator/game/animal_image/pangolin_340_242.png
     const url = item.src
@@ -85,7 +92,6 @@ const moveAnimals = (car, speed) => {
     // if (y >= ga.offsetHeight) {
     if (y >= ga.offsetHeight + circulationSize) {
       item.style.left = getRandomNumber(animalWidth) + 'px'
-      console.log('hi', item.style.left)
       y = -1 * circulationSize; // 設兩百讓每個animal即使不同大小也同時輪迴（每個animal的height都小於100）
       item.style.clipPath = `inset(${circulationSize}px 0px 0.001px 0px)`;
       // item.style.clipPath = `inset(${animalHeight}px 0px 0.001px 0px)`;
@@ -113,6 +119,7 @@ const moveAnimals = (car, speed) => {
     }
 
   });
+  return player
 }
 
 export { moveAnimals, addAnimals }

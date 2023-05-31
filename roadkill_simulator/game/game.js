@@ -32,7 +32,7 @@ const initRender = () => {
 }
 
 
-const playGame = () => {
+const playGame = (player) => {
 
   const gameArea = document.querySelector('.gameArea')
   const road = gameArea.getBoundingClientRect()
@@ -42,9 +42,10 @@ const playGame = () => {
 
   movelines(speed)
   movebushes(speed)
-  moveAnimals(car, speed)
-  if (player.getState().player.start) {
+  player = moveAnimals(car, speed, player)
 
+  if (player.getState().player.start) {
+    console.log(player.getState().player.start)
     if (keys.getState().key.ArrowUp && player.getState().player.y < road.bottom - car.offsetHeight - road.y) {
       player.dispatch(up())
     }
@@ -59,8 +60,10 @@ const playGame = () => {
     }
     player.dispatch(addScore())
     score.innerHTML = player.getState().player.score
+
+    window.requestAnimationFrame(() => playGame(player))
   }
-  window.requestAnimationFrame(playGame)
+
 }
 
 

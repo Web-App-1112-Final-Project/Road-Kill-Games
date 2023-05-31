@@ -1,7 +1,6 @@
 import playGame, { initRender } from "./game/game.js"
-import { player, startAction } from "./game/player.js"
+import { player, startAction, endAction } from "./game/player.js"
 
-const score = document.querySelector('.score')
 const startScreen = document.querySelector('.startScreen')
 const startGameForm = document.querySelector('#startGame')
 const speedInput = document.querySelector('#speed');
@@ -24,7 +23,7 @@ const start = (e) => {
   initRender()
 
   player.dispatch(startAction({ speed: speed }))
-  window.requestAnimationFrame(playGame)
+  window.requestAnimationFrame(() => playGame(player))
 }
 
 startGameForm.addEventListener('submit', start)
