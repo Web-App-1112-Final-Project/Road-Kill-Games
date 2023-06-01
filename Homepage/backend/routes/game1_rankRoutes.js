@@ -14,13 +14,13 @@ const Game1Model = mongoose.model('game1_rank', game1Schema);
 
 const getGame1Rank = async (req, res) => {
   const tasks = await Game1Model.find({});
-  console.log(tasks);
+  // console.log(tasks);
   res.send(tasks);
 };
 
 const saveGame1Rank = (req, res) => {
   const { name, score } = req.body;
-  console.log(name);
+  // console.log(name);
   Game1Model.create({ name, score })
     .then((data) => {
       console.log('Saved Successfully...');

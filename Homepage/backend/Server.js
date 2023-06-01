@@ -25,7 +25,5 @@ mongoose
 app.use('/api_game1', game1Routes);
 app.use('/api_game2', game2Routes);
 app.use('/api_game3', game3Routes);
-// app.use('/api_skill', skillRoutes);
-// app.use('/api_tour', tourRoutes);
 
 app.listen(PORT, () => console.log(`Listening at ${PORT}`));

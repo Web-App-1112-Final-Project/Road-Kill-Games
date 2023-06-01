@@ -32,7 +32,7 @@ async function getGame1Rank() {
   const sort = { score: 1 };
   // rank_datas.sort()
   rank_datas.sort(compare);
-  console.log(rank_datas);
+  // console.log(rank_datas);
 
   let names = document.querySelectorAll('.rank_name_game1');
   let score = document.querySelectorAll('.rank_score_game1');
@@ -54,7 +54,7 @@ async function getGame2Rank() {
   const sort = { score: 1 };
   // rank_datas.sort()
   rank_datas.sort(compare);
-  console.log(rank_datas);
+  // console.log(rank_datas);
 
   let names = document.querySelectorAll('.rank_name_game2');
   let score = document.querySelectorAll('.rank_score_game2');
@@ -78,7 +78,7 @@ async function getGame3Rank() {
   const sort = { score: 1 };
   // rank_datas.sort()
   rank_datas.sort(compare);
-  console.log(rank_datas);
+  // console.log(rank_datas);
 
   let names = document.querySelectorAll('.rank_name_game3');
   let score = document.querySelectorAll('.rank_score_game3');
