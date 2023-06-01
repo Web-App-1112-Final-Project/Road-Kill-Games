@@ -43,7 +43,7 @@ const playerSlice = appStore.createSlice({
       return state;
     },
     addScore: state => {
-      state.score += 1
+      state.score += 0.1
       return state
     },
     hit: (state, action) => {

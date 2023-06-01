@@ -1,12 +1,15 @@
 import playGame, { initRender } from "./game/game.js"
-import { player, startAction, endAction } from "./game/player.js"
+import { player, startAction } from "./game/player.js"
 import { resetAnimals } from "./game/animal.js"
+// import { getCourses } from "./game/api.js"
+
 
 // const startScreen = document.querySelector('.startScreen')
 const modal = document.querySelector('.modal')
 const endModal = document.querySelector('.endModal')
 const startGameBtn = document.querySelector('.modalBtn.start')
 const restartGameBtn = document.querySelector('.modalBtn.restart')
+const summitGameBtn = document.querySelector('.modalBtn.back')
 const speedInput = document.querySelector('#speed');
 const speedNum = document.querySelector('#speedNum')
 
@@ -39,6 +42,7 @@ const start = (e) => {
 speedInput.addEventListener('change', (e) => speedOnChange(e))
 startGameBtn.addEventListener('click', start)
 restartGameBtn.addEventListener('click', start)
+// summitGameBtn.addEventListener('click', getCourses)
 // document.addEventListener('keydown', pressOn)
 // document.addEventListener('keyup', pressOff)
 

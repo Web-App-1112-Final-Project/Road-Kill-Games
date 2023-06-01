@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div class="score"></div>
     <div class="game">
         <!-- <div class="startScreen" style="color: white;">Welcome to the game</div> -->
 
@@ -39,22 +38,28 @@
                 <div class="tips">
                     為什麼領角鴞會飛，還是會被路殺呢？這是因為領角鴞的起飛角度較低，無法垂直起飛，因此在飛越馬路時，還沒飛到很高的高度就被車撞死了；另一方面，牠們的幼鳥在學飛階段很容易掉落在地上，又因飛行能力不佳，於是成為車下亡魂。
                 </div>
-                <div>
-
+                <div class="score" style="margin-bottom: 10px;"></div>
+                <div class="scorekeep">
+                    <input type="text" id="playername" placeholder="名字">
+                    <button>放入排行榜</button>
+                    <span class="hide">v</span>
                 </div>
                 <div class='endModalBtnWrapper'>
                     <button class='modalBtn back'>回到首頁</button>
-                    <button class='modalBtn restart'>開始遊戲</button>
+                    <button class='modalBtn restart'>重新開始</button>
                 </div>
             </div>
         </div>
         <div class="grass">
+            <div class='scorebar'>0 m</div>
             <div class="gameArea"></div>
         </div>
 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
     <script src="https://unpkg.com/@reduxjs/toolkit@1.1.0/dist/redux-toolkit.umd.js"></script>
     <script type="module" src="./roadkill.js"></script>

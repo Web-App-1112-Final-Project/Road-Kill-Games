@@ -1,5 +1,5 @@
 import keys from "./key.js";
-import { player, addScore } from "./player.js"
+import { addScore } from "./player.js"
 import { up, down, right, left } from "./player.js"
 import { movelines, addlines } from "./lines.js";
 import { movebushes, addBushes } from "./bushes.js";
@@ -58,6 +58,7 @@ const playGame = (player) => {
   const car = document.querySelector('.car')
   const speed = player.getState().player.speed
   const score = document.querySelector('.score')
+  const scorebar = document.querySelector('.scorebar')
 
   movelines(speed)
   movebushes(speed, bush_height_obj, bush_width_obj)
@@ -77,7 +78,8 @@ const playGame = (player) => {
       player.dispatch(left())
     }
     player.dispatch(addScore())
-    score.innerHTML = player.getState().player.score
+    score.innerHTML = `你行駛了 ${player.getState().player.score.toFixed(0)} m`
+    scorebar.innerHTML = player.getState().player.score.toFixed(0) + " m"
 
     window.requestAnimationFrame(() => playGame(player))
   }

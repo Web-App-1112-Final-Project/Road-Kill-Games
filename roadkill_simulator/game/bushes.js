@@ -81,7 +81,7 @@ const movebushes = (speed, bush_height_obj, bush_width_obj) => {
       item.style.clipPath = `inset(${newInsetValue})`;
       item.style.top = y + "px";
     }
-    else if (y <= bushHeight) {
+    else if (y >= -bushHeight) {
       let toClipTop = getClipTop(item.style.clipPath) - speed
       const newInsetValue = `${toClipTop}px 0px 0.001px 0px`;
       item.style.clipPath = `inset(${newInsetValue})`;
