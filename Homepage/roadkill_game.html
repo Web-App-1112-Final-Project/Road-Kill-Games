@@ -119,16 +119,40 @@
   <div class='game2_inner'>
     <div class="score"></div>
     <div class="game">
-        <div class="startScreen" style="color: white;">Welcome to the game</div>
         <div class="modal_game2">
-            <form id="startGame">
+            <div class='modalContent'>
+                <div class='modalTitle'>RoadKill Simulator</div>
                 <label for="speed">Speed</label>
-                <input type="range" min="1" max="6" value="1" name="Speed" id="speed">
-                <button>Start Game</button>
-            </form>
+                <input type="range" min="1" max="4" value="2" name="Speed" id="speed">
+                <span id="speedNum">5</span>
+                <div class='modalBtnWrapper'>
+                    <button class='modalBtn back'>回到首頁</button>
+                    <button class='modalBtn start'>開始遊戲</button>
+                </div>
+            </div>
         </div>
+        <div class="endModal hide">
+            <div class='endModalContent'>
+                <div class="endModalTitle">
+                    <div class="endModalTitle-text">RoadKill Simulator</div>
+                </div>
+                <div class="tips">
 
-        <div class="grass hide">
+                </div>
+                <div id="score" style="margin-bottom: 10px;"></div>
+                <div class="scorekeep">
+                    <input type="text" id="playername" placeholder="名字">
+                    <button class="save">放入排行榜</button>
+                    <span id="submitcheck" class="opacity">v</span>
+                </div>
+                <div class='endModalBtnWrapper'>
+                    <button class='modalBtn back'>回到首頁</button>
+                    <button class='modalBtn restart'>重新開始</button>
+                </div>
+            </div>
+        </div>
+        <div class="grass">
+            <div class='scorebar'>0 m</div>
             <div class="gameArea"></div>
         </div>
     </div>
@@ -148,6 +172,9 @@
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
     <script src="https://unpkg.com/@reduxjs/toolkit@1.1.0/dist/redux-toolkit.umd.js"></script>
     <script type="module" src="./js/roadkill.js"></script>

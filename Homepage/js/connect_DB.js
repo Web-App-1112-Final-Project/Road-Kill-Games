@@ -72,7 +72,7 @@ async function getGame2Rank() {
       continue
     }
     names[i].textContent = rank_datas[i].name;
-    score[i].textContent = `${rank_datas[i].score} 分`;
+    score[i].textContent = `${rank_datas[i].score} 公尺`;
   }
 }
 async function getGame3Rank() {

@@ -4,10 +4,12 @@ const appStore = window.RTK;
 
 const initState = {
   start: false,
-  speed: 3,
-  drivespeed: 3,
+  speed: 5,
+  drivespeed: 4,
+  score: 0,
   x: 150,
-  y: 0
+  y: 0,
+  hit: 'none'
 }
 
 const playerSlice = appStore.createSlice({
@@ -18,6 +20,10 @@ const playerSlice = appStore.createSlice({
       const { speed } = action.payload;
       state['speed'] = speed
       state.start = true
+      return state;
+    },
+    end: (state) => {
+      state.start = false
       return state;
     },
     up: state => {
@@ -36,11 +42,24 @@ const playerSlice = appStore.createSlice({
       state.x += state.drivespeed
       return state;
     },
+    addScore: state => {
+      state.score += 0.05 * state.speed
+      return state
+    },
+    resetScore: state => {
+      state.score = 0
+      return state
+    },
+    hit: (state, action) => {
+      const animal = action.payload.animal
+      state.hit = animal
+      return state
+    }
   }
 });
 
 
-const { up, down, left, right, start } = playerSlice.actions;
+const { up, down, left, right, start, end, addScore, hit, resetScore } = playerSlice.actions;
 
 const rootReducer = {
   player: playerSlice.reducer,
@@ -59,4 +78,4 @@ const renderplayer = () => {
 player.subscribe(renderplayer);
 
 export { up, down, left, right }
-export { player, start as startAction }
+export { player, start as startAction, end as endAction, addScore, hit, resetScore }
