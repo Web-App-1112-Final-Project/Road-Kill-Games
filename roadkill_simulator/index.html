@@ -24,8 +24,8 @@
             <div class='modalContent'>
                 <div class='modalTitle'>RoadKill Simulator</div>
                 <label for="speed">Speed</label>
-                <input type="range" min="1" max="6" value="3" name="Speed" id="speed">
-                <span id="speedNum">3</span>
+                <input type="range" min="1" max="4" value="2" name="Speed" id="speed">
+                <span id="speedNum">5</span>
                 <div class='modalBtnWrapper'>
                     <button class='modalBtn back'>回到首頁</button>
                     <button class='modalBtn start'>開始遊戲</button>
@@ -34,15 +34,17 @@
         </div>
         <div class="endModal hide">
             <div class='endModalContent'>
-                <div class='endModalTitle'>RoadKill Simulator</div>
-                <div class="tips">
-                    為什麼領角鴞會飛，還是會被路殺呢？這是因為領角鴞的起飛角度較低，無法垂直起飛，因此在飛越馬路時，還沒飛到很高的高度就被車撞死了；另一方面，牠們的幼鳥在學飛階段很容易掉落在地上，又因飛行能力不佳，於是成為車下亡魂。
+                <div class="endModalTitle">
+                    <div class="endModalTitle-text">RoadKill Simulator</div>
                 </div>
-                <div class="score" style="margin-bottom: 10px;"></div>
+                <div class="tips">
+
+                </div>
+                <div id="score" style="margin-bottom: 10px;"></div>
                 <div class="scorekeep">
                     <input type="text" id="playername" placeholder="名字">
-                    <button>放入排行榜</button>
-                    <span class="hide">v</span>
+                    <button class="save">放入排行榜</button>
+                    <span id="submitcheck" class="opacity">v</span>
                 </div>
                 <div class='endModalBtnWrapper'>
                     <button class='modalBtn back'>回到首頁</button>

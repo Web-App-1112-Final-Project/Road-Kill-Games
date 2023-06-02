@@ -4,6 +4,7 @@ import { up, down, right, left } from "./player.js"
 import { movelines, addlines } from "./lines.js";
 import { movebushes, addBushes } from "./bushes.js";
 import { moveAnimals, addAnimals } from "./animal.js";
+import { tips_obj } from './tips.js'
 
 
 const Nbush = 14
@@ -48,7 +49,7 @@ const initRender = () => {
 
 
 
-const animal_obj = { tiger: '石虎', owl: '領角鴞', butterfly: '小紫斑蝶', crab: '奧氏後相手蟹', 'turtle': '班龜', pangolin: '穿山甲' }
+const animal_obj = { tiger: '石虎', owl: '領角鴞', butterfly: '小紫斑蝶', crab: '奧氏後相手蟹', 'turtle': '班龜', pangolin: '穿山甲', frog: '梭德氏樹蛙' }
 
 
 const playGame = (player) => {
@@ -57,7 +58,7 @@ const playGame = (player) => {
   const road = gameArea.getBoundingClientRect()
   const car = document.querySelector('.car')
   const speed = player.getState().player.speed
-  const score = document.querySelector('.score')
+  const score = document.querySelector('#score')
   const scorebar = document.querySelector('.scorebar')
 
   movelines(speed)
@@ -85,12 +86,16 @@ const playGame = (player) => {
   }
   else {
     const modal = document.querySelector('.endModal')
-    const modalTitle = document.querySelector('.endModalTitle')
+    const modalTitle = document.querySelector('.endModalTitle-text')
     const hittedAnimal = player.getState().player.hit.split('_')[0];
+    const tips = document.querySelector('.tips')
 
     const hittedAnimalName = animal_obj[hittedAnimal]
     modal.classList.remove('hide')
-    modalTitle.innerHTML = `你撞到了「${hittedAnimalName}」`
+    modalTitle.innerHTML = `&ensp;你撞到了「${hittedAnimalName}」`
+
+    const tipsText = tips_obj[hittedAnimal]
+    tips.innerHTML = tipsText
 
   }
 }

@@ -8,6 +8,10 @@ const game1Schema = new mongoose.Schema({
   score: {
     type: Number,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const Game1Model = mongoose.model('game1_rank', game1Schema);

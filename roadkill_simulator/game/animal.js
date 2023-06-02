@@ -27,7 +27,7 @@ for (const ani of animal_list) {
   image.addEventListener('load', function () {
     const height = image.naturalHeight;
     const width = image.naturalWidth;
-    console.log(height) // 34 702 // -231 crab
+    // console.log(height) // 34 702 // -231 crab
     // 61 // 702 // -258 tiger
     animal_height_obj[ani] = height / 10
     animal_width_obj[ani] = width / 10
@@ -61,7 +61,7 @@ const resetAnimals = () => {
   let c = 0
   let animals = document.querySelectorAll(".animal");
   for (const animal of animals) {
-    animal.style.top = -250 * (c + 1) + 'px'
+    animal.style.top = -230 * (c + 1) + 'px'
     c += 1
     const url = animal.src
     const tempurl = url.split('/').pop();
@@ -75,11 +75,13 @@ const resetAnimals = () => {
 const isCollide = (car, item) => {
   const aRect = car.getBoundingClientRect();
   const bRect = item.getBoundingClientRect();
+
+  const tolerance = 10;
   return !(
-    aRect.bottom < bRect.top ||
-    aRect.top > bRect.bottom ||
-    aRect.right < bRect.left ||
-    aRect.left > bRect.right
+    aRect.bottom - tolerance < bRect.top ||
+    aRect.top + tolerance > bRect.bottom ||
+    aRect.right - tolerance < bRect.left ||
+    aRect.left + tolerance > bRect.right
   );
 }
 
@@ -96,6 +98,12 @@ const endGame = (player, item) => {
 
 const moveAnimals = (car, speed, player) => {
   let Animals = document.querySelectorAll(".animal");
+  const animals_arr = Array.from(Animals);
+
+  const animalTops = animals_arr.map((item) => {
+    return parseInt(item.style.top)
+  })
+
   Animals.forEach(function (item) {
     if (isCollide(car, item)) {
       player = endGame(player, item)
@@ -109,14 +117,19 @@ const moveAnimals = (car, speed, player) => {
     let y = parseFloat(item.style.top) // 每條線離gameArea邊緣多少 700 px
 
     y += speed
-    const circulationSize = 1050
     // console.log(y)
     // if (y >= ga.offsetHeight) {
     if (y >= ga.offsetHeight + 200) {
+      const randomIndex = Math.floor(Math.random() * animal_list.length);
+      item.src = `./game/animal_image/${animal_list[randomIndex]}.png`;
+      const tempurl = item.src.split('/').pop();
+      const animal_id = tempurl.substring(0, tempurl.lastIndexOf('.'));
+      animalWidth = animal_width_obj[animal_id]
+      animalHeight = animal_height_obj[animal_id]
+      item.style.height = animalHeight + 'px'
       item.style.left = getRandomNumber(animalWidth) + 'px'
-      y = -1 * circulationSize - animalHeight; // 設兩百讓每個animal即使不同大小也同時輪迴（每個animal的height都小於100）
-      item.style.clipPath = `inset(${circulationSize}px 0px 0.001px 0px)`;
-      // item.style.clipPath = `inset(${animalHeight}px 0px 0.001px 0px)`;
+      y = 1 * Math.min(...animalTops) - 230; // 設兩百讓每個animal即使不同大小也同時輪迴（每個animal的height都小於100）
+      item.style.clipPath = `inset(${200}px 0px 0.001px 0px)`;
     } // 會影響有沒有縮完整才跳回去（應該要y == gameArea高度(ga.offsetHeight) 以後跳回去，跟線不一樣，他需要跳回-50，再慢慢揭露，線都長一樣所以只要管長度）
 
     if (y > ga.offsetHeight - animalHeight) { // 會影響開始縮的時間 (應該要從y == ga.offsetHeight - 線的長度開始縮)
