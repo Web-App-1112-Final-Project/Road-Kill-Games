@@ -231,19 +231,25 @@ img {
 }
 
 .again {
-  float: right;
+  /* float: right; */
   font-size: 20px;
   font-weight: bold;
   color: black;
   text-decoration: none;
   width: 160px;
-  margin-left: 80%;
-  margin-top: 3vh;
+  margin-left: 10%;
+  margin-bottom: 2px;
+  /* margin-top: 3vh; */
+  /* display: inline-block; */
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .again p{
   border: solid 3px;
-  border-radius: 5px;
+  border-radius: 10px;
   border-color: black;
   text-align: center;
   padding: 0.5em;
@@ -264,10 +270,58 @@ img {
   color: white;
   cursor: pointer;
 
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
+/* 後端提交部份 */
+.data_collect{
+  width: 1500px;
+  margin-left: 3%;
+  /* margin-top: 10vh; */
+  display: flex;
+  align-items: center;
+}
+.data_collect p{
+  display: inline;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 23px;
+}
+
+input[type="text"] {
+  display: inline;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+button[type="submit"] {
+  background-color: white;
+  border: solid 3px;
+  color: black;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0.5em;
+  margin-left: 10px;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  width: 160px;
+  transition: all 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  /* background-color: #3e8e41; */
+  background-color: orange;
+}
 /*responsive*/
+
+.botton_container{
+  display: flex;
+}
 
 @media only screen and (max-width: 768px) {
   /* h1 {

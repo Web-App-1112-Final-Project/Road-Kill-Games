@@ -220,6 +220,7 @@
     <p class="final">
         <span id="totalTime"></span>
     </p>
+    
     <!--資訊-->
     <div id = random-information>
         <img class="final_img">
@@ -239,19 +240,27 @@
 
         </div>
     </div>
-    <div class = "again">
-        <p>再來一場</p>
-    </div>
-    <!-- <p class="final">
-        <span id="totalTime"></span>
-    </p> -->
-    <!-- <br> -->
-    <!-- <p> -->
-        <!-- <a class="again">Play Again !! </a> -->
-    <!-- </p> -->
+    <!-- 資訊 -->
+    <!-- <div id="botton_container"> -->
+      <div class="data_collect">
+        <p>若想參與排名競爭，請輸入你的大名：</p>
+        <!-- <br> -->
+        <form id="myForm" method="POST">
+          <input type="text" name="username" placeholder="請輸入名字">
+          <button type="submit">提交</button>
+        </form>
+        <div class = "again">
+          <p>再來一場</p>
+      </div>
+      </div>
+
+
+    <!-- </div> -->
   </div>
 </section>
-
+<!-- 後端 -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- 後端 -->
 <script src="js/g1_script.js"></script>   
   </div>
 

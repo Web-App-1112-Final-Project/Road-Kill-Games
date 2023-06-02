@@ -1,3 +1,4 @@
+
 const cards = document.querySelectorAll(".memory-card");
 const refresh = document.querySelector(".refresh img");
 const final = document.querySelector(".final");
@@ -56,7 +57,6 @@ function unFlipCards() {
 }
 
 function resetBoard() {
-  // card döndüğünde tekrar tıklayabilmemizi sağlar
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
@@ -106,7 +106,7 @@ function gameWon() {
   click = 0;
 }
 
-//congrats section'da again butonu
+
 //結算頁面
 again.addEventListener("click", function () {
   congratsSection.classList.replace("show", "hidden");
@@ -183,3 +183,31 @@ var textElement2 = document.querySelector("#random-information + div .final_text
 imgElement2.src = randomInformation2.imageSrc;
 textElement2.innerText = randomInformation2.text;
 var displayElement = document.getElementById("random-information");
+
+//儲存名字、時間
+
+const addTask = (name) => {
+  axios
+    .post('http://localhost:4000/api_game1/save', {
+      name: name,
+      score: totalSeconds,
+    })
+    .then((res) => {
+      console.log(res.data);
+    });
+};
+
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // 防止表單的默認提交行為
+  
+  // 獲取表單元素
+  var form = document.getElementById("myForm");
+  
+  // 獲取表單中的值
+  var name = form.elements["username"].value;
+  
+  // 發送表單數據到後端
+  addTask(name);
+  alert("提交成功");
+
+});

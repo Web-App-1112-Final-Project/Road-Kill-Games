@@ -120,7 +120,7 @@ function checkAnswer(answer) {
 function showScore() {
   const addTask = (name) => {
     axios
-      .post('http://localhost:5000/api_game3/save', {
+      .post('http://localhost:4000/api_game3/save', {
         name: name,
         score: (correctAnswers / questions.length) * 100,
       })
