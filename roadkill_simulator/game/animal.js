@@ -17,7 +17,7 @@ const getClipTop = (clipPathValue) => {
 
 const gameArea = document.querySelector('.gameArea')
 const animal_list = ['butterfly_450_374', 'crab_424_340',
-  'frog_480_344', 'owl_450_530', 'pangolin_340_242', 'turtle_500_325', 'tiger_450_610']
+  'frog_480_344', 'owl_400_471', 'pangolin_400_285', 'turtle_500_325', 'tiger_400_542']
 // const animal_list = ['crab_424_340']
 const animal_height_obj = {}
 const animal_width_obj = {}
