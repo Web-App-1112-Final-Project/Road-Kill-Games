@@ -1,5 +1,5 @@
 import keys from "./key.js";
-import { addScore } from "./player.js"
+import { addScore, addSpeed } from "./player.js"
 import { up, down, right, left } from "./player.js"
 import { movelines, addlines } from "./lines.js";
 import { movebushes, addBushes } from "./bushes.js";
@@ -52,6 +52,8 @@ const initRender = () => {
 const animal_obj = { tiger: '石虎', owl: '領角鴞', butterfly: '小紫斑蝶', crab: '奧氏後相手蟹', 'turtle': '班龜', pangolin: '穿山甲', frog: '梭德氏樹蛙' }
 
 
+let addSpeedTime = [300, 600, 900, 1200, 1500]
+
 const playGame = (player) => {
 
   const gameArea = document.querySelector('.gameArea')
@@ -79,6 +81,14 @@ const playGame = (player) => {
       player.dispatch(left())
     }
     player.dispatch(addScore())
+
+    if (player.getState().player.score > addSpeedTime[0]) {
+      player.dispatch(addSpeed())
+      console.log(player.getState().player.speed)
+      addSpeedTime = addSpeedTime.slice(1);
+      console.log(addSpeedTime)
+    }
+
     score.innerHTML = `你行駛了 ${player.getState().player.score.toFixed(0)} m`
     scorebar.innerHTML = player.getState().player.score.toFixed(0) + " m"
 
