@@ -10,6 +10,7 @@ const endModal = document.querySelector('.endModal')
 const startGameBtn = document.querySelector('.modalBtn.start')
 const restartGameBtn = document.querySelector('.modalBtn.restart')
 const saveScoreBtn = document.querySelector('button.save')
+const backtoHomeBtn = document.querySelector('.modalBtn.back')
 const speedInput = document.querySelector('#speed');
 const speedNum = document.querySelector('#speedNum')
 const submitCheck = document.querySelector('#submitcheck')
@@ -30,6 +31,10 @@ const saveScoreHandler = async () => {
   } catch {
     console.error('upload failed')
   }
+}
+
+const backtoHomeHandler = () => {
+  console.log('hi')
 }
 
 
@@ -58,5 +63,6 @@ speedInput.addEventListener('change', (e) => speedOnChange(e))
 startGameBtn.addEventListener('click', start)
 restartGameBtn.addEventListener('click', start)
 saveScoreBtn.addEventListener('click', saveScoreHandler)
+backtoHomeBtn.addEventListener('click', backtoHomeHandler)
 
 

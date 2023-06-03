@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -21,154 +22,158 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="./css/roadkill_game_reset.css">
     <link rel="stylesheet" href="./css/roadkill_game_style.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
+
 <body>
-      <!--Main Navigation-->
-  <header>
-    <style>
-      /* Carousel styling */
-      #introCarousel,
-      .carousel-inner,
-      .carousel-item,
-      .carousel-item.active {
-        height: 100vh;
-      }
+    <!--Main Navigation-->
+    <header>
+        <style>
+            /* Carousel styling */
+            #introCarousel,
+            .carousel-inner,
+            .carousel-item,
+            .carousel-item.active {
+                height: 100vh;
+            }
 
-      .carousel-item:nth-child(1) {
-        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
+            .carousel-item:nth-child(1) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
 
-      .carousel-item:nth-child(2) {
-        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
+            .carousel-item:nth-child(2) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
 
-      .carousel-item:nth-child(3) {
-        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
+            .carousel-item:nth-child(3) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
 
-      /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
-        #introCarousel {
-          margin-top: -58.59px;
-        }
-      }
+            /* Height for devices larger than 576px */
+            @media (min-width: 992px) {
+                #introCarousel {
+                    margin-top: -58.59px;
+                }
+            }
 
-      .navbar .nav-link {
-        color: #fff !important;
-      }
-    </style>
+            .navbar .nav-link {
+                color: #fff !important;
+            }
+        </style>
 
-    <!-- Navbar -->
-    <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center" style="z-index: 2000; opacity: 0.8;" id="topNavBar">
-      <div class="container-fluid text-center">
-        <!-- Navbar brand -->
-        <a class="navbar-brand nav-link" href="./index.html" >
-          <strong>路死誰守</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
-          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" >
-                  遊戲選單
+        <!-- Navbar -->
+        <nav class="sticky navbar navbar-expand-lg shadow-5-strong navbar-dark bg-info fixed-top navbar-center"
+            style="z-index: 2000; opacity: 0.8;" id="topNavBar">
+            <div class="container-fluid text-center">
+                <!-- Navbar brand -->
+                <a class="navbar-brand nav-link" href="./index.html">
+                    <strong>路死誰守</strong>
                 </a>
-                <ul class="dropdown-menu" >
-                  <li>
-                  <a class="dropdown-item" href="./game1.html">動物記憶配對</a>
-                  </li>
-                  <li>
-                  <a class="dropdown-item" href="./roadkill_game.html">路殺模擬器</a>
-                  </li>
-                  <li>
-                  <a class="dropdown-item" href="./game3.html">物種鑑定師</a>
-                  </li>
-                </ul>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">動物圖鑑</a>
-            </li>
-          </ul>
-                <div class="search-input">
-                  <form id="search" action="#">
-                    <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-                    <i class="fa fa-search"></i>
-                  </form>
-                </div>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-toggle="dropdown">
+                                遊戲選單
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="./game1.html">動物記憶配對</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./roadkill_game.html">路殺模擬器</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./game3.html">物種鑑定師</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">動物圖鑑</a>
+                        </li>
+                    </ul>
+                    <div class="search-input">
+                        <form id="search" action="#">
+                            <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
+                                onkeypress="handle" />
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
 
-        </div>
-      </div>
-    </nav>
-    <!-- Navbar End-->
-  </header>
-  <!--Main Navigation-->
-
-  <!-- Game start -->
-  <div class='game2_inner'>
-    <div class="score"></div>
-    <div class="game">
-        <div class="modal_game2">
-            <div class='modalContent'>
-                <div class='modalTitle'>RoadKill Simulator</div>
-                <label for="speed">Speed</label>
-                <input type="range" min="1" max="4" value="2" name="Speed" id="speed">
-                <span id="speedNum">5</span>
-                <div class='modalBtnWrapper'>
-                    <button class='modalBtn back'>回到首頁</button>
-                    <button class='modalBtn start'>開始遊戲</button>
                 </div>
             </div>
-        </div>
-        <div class="endModal hide">
-            <div class='endModalContent'>
-                <div class="endModalTitle">
-                    <div class="endModalTitle-text">RoadKill Simulator</div>
-                </div>
-                <div class="tips">
+        </nav>
+        <!-- Navbar End-->
+    </header>
+    <!--Main Navigation-->
 
-                </div>
-                <div id="score" style="margin-bottom: 10px;"></div>
-                <div class="scorekeep">
-                    <input type="text" id="playername" placeholder="名字">
-                    <button class="save">放入排行榜</button>
-                    <span id="submitcheck" class="opacity">v</span>
-                </div>
-                <div class='endModalBtnWrapper'>
-                    <button class='modalBtn back'>回到首頁</button>
-                    <button class='modalBtn restart'>重新開始</button>
+    <!-- Game start -->
+    <div class='game2_inner'>
+        <div class="score"></div>
+        <div class="game">
+            <div class="modal_game2">
+                <div class='modalContent'>
+                    <div class='modalTitle'>RoadKill Simulator</div>
+                    <label for="speed">Speed</label>
+                    <input type="range" min="1" max="4" value="2" name="Speed" id="speed">
+                    <span id="speedNum">5</span>
+                    <div class='modalBtnWrapper'>
+                        <button class='modalBtn back first'>回到首頁</button>
+                        <button class='modalBtn start'>開始遊戲</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="grass">
-            <div class='scorebar'>0 m</div>
-            <div class="gameArea"></div>
+            <div class="endModal hide">
+                <div class='endModalContent'>
+                    <div class="endModalTitle">
+                        <div class="endModalTitle-text">RoadKill Simulator</div>
+                    </div>
+                    <div class="tips">
+
+                    </div>
+                    <div id="score" style="margin-bottom: 10px;"></div>
+                    <div class="scorekeep">
+                        <input type="text" id="playername" placeholder="名字">
+                        <button class="save">放入排行榜</button>
+                        <span id="submitcheck" class="opacity">v</span>
+                    </div>
+                    <div class='endModalBtnWrapper'>
+                        <button class='modalBtn back die'>回到首頁</button>
+                        <button class='modalBtn restart'>重新開始</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grass">
+                <div class='scorebar'>0 m</div>
+                <div class="gameArea"></div>
+            </div>
         </div>
     </div>
-  </div>
     <!-- Game end -->
 
-  <!--Footer-->
-  <footer class="bg-light text-lg-start">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">NTU Web App Group 1</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!--Footer-->
+    <!--Footer-->
+    <footer class="bg-light text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">NTU Web App Group 1</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!--Footer-->
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
@@ -179,4 +184,5 @@
     <script src="https://unpkg.com/@reduxjs/toolkit@1.1.0/dist/redux-toolkit.umd.js"></script>
     <script type="module" src="./js/roadkill.js"></script>
 </body>
+
 </html>
