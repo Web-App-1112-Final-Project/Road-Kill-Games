@@ -3,16 +3,16 @@
 }
 
 html {
-    background-color: grey;
+    background-color: #adb1ac;
     overflow-y: hidden;
 }
 
 .car {
     position: absolute;
     bottom: 0px;
-    width: 60px;
+    width: 90px;
     margin: auto;
-    height: 80px;
+    height: 120px;
     /* background-color: cadetblue; */
     /* background-image: url('./assets/car2.png'); */
 }
@@ -29,8 +29,8 @@ html {
     display: flex;
     position: absolute;
     top: 10%;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 600px;
     overflow: hidden;
     justify-content: center;
 }
@@ -38,8 +38,8 @@ html {
 
 .gameArea {
     background-color: black;
-    width: 200px;
-    height: 500px;
+    width: 300px;
+    height: 600px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -59,8 +59,8 @@ html {
 .modal_game2 {
     z-index: 1;
     top: 10%;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 600px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -138,7 +138,7 @@ html {
 
 .tips {
     margin-bottom: 20px;
-    height: 50%;
+    height: 55%;
     width: 85%;
     line-height: 20px;
     /* text-align: center; */
@@ -147,8 +147,8 @@ html {
 .endModal {
     z-index: 1;
     top: 10%;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 600px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -161,8 +161,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 85%;
-    width: 400px;
+    height: 65%;
+    width: 450px;
     padding: auto;
     background-color: #FDF2D4;
     border-radius: 25px;
@@ -193,6 +193,7 @@ html {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 20px;
     height: 10%;
 }
 

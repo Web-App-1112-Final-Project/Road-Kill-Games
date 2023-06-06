@@ -29,13 +29,13 @@ for (const ani of animal_list) {
     const width = image.naturalWidth;
     // console.log(height) // 34 702 // -231 crab
     // 61 // 702 // -258 tiger
-    animal_height_obj[ani] = height / 10
-    animal_width_obj[ani] = width / 10
+    animal_height_obj[ani] = height / 8
+    animal_width_obj[ani] = width / 8
   });
 }
 
 function getRandomNumber(width) {
-  return Math.floor(Math.random() * (200 - width))
+  return Math.floor(Math.random() * (310 - width))
 }
 
 const addAnimals = () => {
@@ -76,7 +76,7 @@ const isCollide = (car, item) => {
   const aRect = car.getBoundingClientRect();
   const bRect = item.getBoundingClientRect();
 
-  const tolerance = 10;
+  const tolerance = 20;
   return !(
     aRect.bottom - tolerance < bRect.top ||
     aRect.top + tolerance > bRect.bottom ||

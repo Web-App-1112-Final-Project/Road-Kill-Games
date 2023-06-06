@@ -5,7 +5,7 @@ const appStore = window.RTK;
 const initState = {
   start: false,
   speed: 5,
-  drivespeed: 4,
+  drivespeed: 5,
   score: 0,
   x: 150,
   y: 0,

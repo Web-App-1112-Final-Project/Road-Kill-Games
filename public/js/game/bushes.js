@@ -17,8 +17,8 @@ const getClipTop = (clipPathValue) => {
 
 function getRandomNumber(width) {
   const ranges = [
-    { min: 10, max: 195 - width },
-    { min: 430 + width, max: 600 - width }
+    { min: 10, max: 200 - width },
+    { min: 530 + width, max: 700 - width }
   ];
   const rangeIndex = Math.floor(Math.random() * ranges.length);
   const { min, max } = ranges[rangeIndex];

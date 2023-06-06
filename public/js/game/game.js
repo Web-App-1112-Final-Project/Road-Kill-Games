@@ -37,8 +37,8 @@ const initRender = () => {
   grassArea.appendChild(shadow);
   shadow.style.left = 0 + 'px' //  -350 px ~ -250px; 250px ~ 350px
   shadow.style.top = 0 + 'px'
-  shadow.style.height = 500 + 'px'
-  shadow.style.width = 600 + 'px'
+  shadow.style.height = 600 + 'px'
+  shadow.style.width = 700 + 'px'
 
   // car
   let car = document.createElement('img')
@@ -52,7 +52,7 @@ const initRender = () => {
 const animal_obj = { tiger: '石虎', owl: '領角鴞', butterfly: '小紫斑蝶', crab: '奧氏後相手蟹', 'turtle': '班龜', pangolin: '穿山甲', frog: '梭德氏樹蛙' }
 
 
-let addSpeedTime = [300, 600, 900, 1200, 1500]
+let addSpeedTime = [150, 250, 450, 600, 800, 1100, 1400, 1800]
 
 const playGame = (player) => {
 

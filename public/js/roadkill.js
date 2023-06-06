@@ -18,7 +18,7 @@ const submitCheck = document.querySelector('#submitcheck')
 
 
 const speedOnChange = (e) => {
-  speedNum.innerHTML = parseInt(e.target.value) + 3
+  speedNum.innerHTML = parseInt(e.target.value) + 4
 }
 
 const saveScoreHandler = async () => {
